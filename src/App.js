@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import Container from '@material-ui/core/Container';
 
 import Play from './components/Play';
