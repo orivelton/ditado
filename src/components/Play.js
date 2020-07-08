@@ -6,6 +6,7 @@ import HearingIcon from '@material-ui/icons/Hearing';
 import ReplayIcon from '@material-ui/icons/Replay';
 
 import Words from '../data/text.json';
+import { speakText } from '../settings/config';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -21,19 +22,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Play = () => {
-  // const synth = window.speechSynthesis;
   const [count, setCount] = useState(0);
   const [showPlay, setShowPlay] = useState(true);
 
   const readText = () => {
     setCount(count + 1);
-    console.log(count);
-    
-    const msg = new SpeechSynthesisUtterance(Words[count].text);
-    msg.lang = 'pt-PT';
-    msg.voiceURI = "native";
-    msg.rate = 0.7;
-    window.speechSynthesis.speak(msg);
+    speakText(Words[count].text)
 
     if((Words.length -1) === count) {
       setShowPlay(false);
