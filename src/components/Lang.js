@@ -33,9 +33,7 @@ const Lang = () => {
   };
 
   const handleOpen = () => {
-    console.log(speechSynthesis.getVoices());
-    
-    setVoices(speechSynthesis.getVoices());
+    !voices.length && setVoices(speechSynthesis.getVoices());
   };
 
   return (
