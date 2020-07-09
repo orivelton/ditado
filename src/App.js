@@ -10,7 +10,6 @@ const  App = () => (
     <Header />
     <Container maxWidth="sm">
       <div className="App">
-        <Lang />
         <Play />
       </div>
     </Container>

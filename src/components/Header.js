@@ -15,6 +15,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Lang from './Lang';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -192,6 +193,7 @@ const Header = () => {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+            <Lang />
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
