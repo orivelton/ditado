@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
+import { sortByProperty } from '../helpers/helper';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -22,18 +23,14 @@ const Lang = () => {
   const speechSynthesis = window.speechSynthesis;
   const [voices, setVoices] = useState([]);
   const [lang, setLang] = React.useState('');
-  
-  // setTimeout(() => {
-  //   setVoices(speechSynthesis.getVoices());
-  // }, 1000);
 
-  const handleChange = (event) => {
-    setLang(event.target.value);
-    localStorage.setItem('lang', event.target.value);
+  const handleChange = ({target: { value }}) => {
+    setLang(value);
+    localStorage.setItem('lang', value);
   };
 
   const handleOpen = () => {
-    !voices.length && setVoices(speechSynthesis.getVoices());
+    !voices.length && setVoices(sortByProperty(speechSynthesis.getVoices()));
   };
 
   return (
@@ -51,7 +48,7 @@ const Lang = () => {
           <em>None</em>
         </MenuItem>
         {
-          voices.map(({ lang, voiceURI }) => <MenuItem key={voiceURI} value={lang}>{lang}</MenuItem>)
+          voices.map(({ lang, voiceURI }) => <MenuItem key={voiceURI} value={lang}>{voiceURI} - {lang}</MenuItem>)
         }
       </Select>
     </FormControl>
