@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import HearingIcon from '@material-ui/icons/Hearing';
-import ReplayIcon from '@material-ui/icons/Replay';
 
 import Words from '../data/text.json';
 import { speakText } from '../settings/config';
+import ProgressStepper from './ProgressStepper';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -23,52 +23,34 @@ const useStyles = makeStyles((theme) => ({
 
 const Play = () => {
   const [count, setCount] = useState(0);
-  const [showPlay, setShowPlay] = useState(true);
 
-  const readText = () => {
-    setCount(count + 1);
-    speakText(Words[count].text)
-
-    if((Words.length -1) === count) {
-      setShowPlay(false);
-    }
-    
+  const handleNextPlayer = () => {
+    setCount((count) => count + 1);
   }
 
-  const reload = () => {
-    setCount(0);
-    setShowPlay(true);
+  const handleBackPlayer = () => {
+    setCount((count) => count - 1);
   }
 
   const classes = useStyles();
+  const progressStepper = { steps: Words.length, count, handleNextPlayer, handleBackPlayer };
 
   return (
     <>
       {
-        showPlay ? (
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            className={classes.button}
-            endIcon={<HearingIcon />}
-            onClick={readText}
-          >
-            Play
-          </ Button>
-
-        ) : (
-          <Button
-            variant="contained"
-            size="large"
-            className={classes.button}
-            endIcon={<ReplayIcon />}
-            onClick={reload}
-          >
-            Reload
-          </ Button>
-        )
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          className={classes.button}
+          endIcon={<HearingIcon />}
+          onClick={() => speakText(Words[count].text)}
+        >
+          Play
+        </ Button>
       }
+
+      <ProgressStepper {...progressStepper}/>
     </>
   )
 }
