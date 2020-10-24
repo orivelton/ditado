@@ -2,11 +2,11 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 
 import Play from './components/Play';
-import Header from './components/Header';
+import Lang from './components/Lang';
 
 const  App = () => (
   <>
-    <Header />
+    <Lang />
     <Container maxWidth="sm">
       <div className="App">
         <Play />

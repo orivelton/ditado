@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Button from '@material-ui/core/Button';
+import { Button, TextField} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import HearingIcon from '@material-ui/icons/Hearing';
 import Divider from '@material-ui/core/Divider';
@@ -53,13 +53,15 @@ const Play = () => {
     <>
       <div className={classes.root}>
         <div className={classes.section}>
+          <TextField id="outlined-basic" label="Text" variant="outlined" />
+          <Divider variant="middle" />
           <Button
             variant="contained"
             color="primary"
             size="large"
             className={classes.button}
             endIcon={<HearingIcon />}
-            onClick={() => speakText(Words[count].text)}
+            onClick={() => speakText('Maria')}
           >
             Play
           </ Button>
