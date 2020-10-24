@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/ditado/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/ditado/static/js/main.128f487c.chunk.js",
-    "main.js.map": "/ditado/static/js/main.128f487c.chunk.js.map",
+    "main.js": "/ditado/static/js/main.31192653.chunk.js",
+    "main.js.map": "/ditado/static/js/main.31192653.chunk.js.map",
     "runtime-main.js": "/ditado/static/js/runtime-main.6ac7036c.js",
     "runtime-main.js.map": "/ditado/static/js/runtime-main.6ac7036c.js.map",
-    "static/js/2.1b805581.chunk.js": "/ditado/static/js/2.1b805581.chunk.js",
-    "static/js/2.1b805581.chunk.js.map": "/ditado/static/js/2.1b805581.chunk.js.map",
+    "static/js/2.0e8ff4e5.chunk.js": "/ditado/static/js/2.0e8ff4e5.chunk.js",
+    "static/js/2.0e8ff4e5.chunk.js.map": "/ditado/static/js/2.0e8ff4e5.chunk.js.map",
     "index.html": "/ditado/index.html",
-    "precache-manifest.ae4367a52c3fcb0dfb515b614a6d979a.js": "/ditado/precache-manifest.ae4367a52c3fcb0dfb515b614a6d979a.js",
+    "precache-manifest.81c233d42aed70b9e26c1928ba849dc3.js": "/ditado/precache-manifest.81c233d42aed70b9e26c1928ba849dc3.js",
     "service-worker.js": "/ditado/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/ditado/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.1b805581.chunk.js.LICENSE.txt": "/ditado/static/js/2.1b805581.chunk.js.LICENSE.txt"
+    "static/js/2.0e8ff4e5.chunk.js.LICENSE.txt": "/ditado/static/js/2.0e8ff4e5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6ac7036c.js",
-    "static/js/2.1b805581.chunk.js",
+    "static/js/2.0e8ff4e5.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.128f487c.chunk.js"
+    "static/js/main.31192653.chunk.js"
   ]
 }

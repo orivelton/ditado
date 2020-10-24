@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ditado/precache-manifest.ae4367a52c3fcb0dfb515b614a6d979a.js"
+  "/ditado/precache-manifest.81c233d42aed70b9e26c1928ba849dc3.js"
 );
 
 self.addEventListener('message', (event) => {
