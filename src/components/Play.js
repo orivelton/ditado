@@ -4,10 +4,7 @@ import { Button, TextField} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import HearingIcon from '@material-ui/icons/Hearing';
 import Divider from '@material-ui/core/Divider';
-
-import Words from '../data/text.json';
 import { speakText } from '../settings/config';
-import ProgressStepper from './ProgressStepper';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,40 +33,29 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Play = () => {
-  const [count, setCount] = useState(0);
-
-  const handleNextPlayer = () => {
-    setCount((count) => count + 1);
-  }
-
-  const handleBackPlayer = () => {
-    setCount((count) => count - 1);
-  }
-
   const classes = useStyles();
-  const progressStepper = { steps: Words.length, count, handleNextPlayer, handleBackPlayer };
+  const [text, setText] = useState('');
 
   return (
     <>
       <div className={classes.root}>
         <div className={classes.section}>
-          <TextField id="outlined-basic" label="Text" variant="outlined" />
-          <Divider variant="middle" />
+          <TextField fullWidth label="Text" variant="outlined" onChange={({currentTarget: { value }}) => setText(value)}/>
+        </div>
+        <Divider variant="middle" />
+        <div className={classes.section}>
           <Button
             variant="contained"
             color="primary"
             size="large"
             className={classes.button}
             endIcon={<HearingIcon />}
-            onClick={() => speakText('Maria')}
+            onClick={() => text && speakText(text)}
           >
             Play
           </ Button>
         </div>
         <Divider variant="middle" />
-        <div className={classes.section}>
-          <ProgressStepper {...progressStepper}/>
-        </div>
       </div>
     </>
   )
